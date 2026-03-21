@@ -444,7 +444,6 @@ def fuse_scale_shift_gate_select01_kernel_blc_opt(
     tl.store(gate_out_ptr + go_off, gate, mask=mask)
 
 
-@torch.compiler.disable
 def fuse_scale_shift_kernel(
     x: torch.Tensor,
     scale: torch.Tensor,
@@ -564,7 +563,6 @@ def fuse_scale_shift_kernel(
     return output
 
 
-@torch.compiler.disable
 def fuse_scale_shift_gate_select01_kernel(
     x: torch.Tensor,
     scale0: torch.Tensor,
@@ -637,7 +635,6 @@ def fuse_scale_shift_gate_select01_kernel(
     return output, gate_out
 
 
-@torch.compiler.disable
 def fuse_layernorm_scale_shift_gate_select01_kernel(
     x: torch.Tensor,
     weight: torch.Tensor | None,
@@ -727,7 +724,6 @@ def fuse_layernorm_scale_shift_gate_select01_kernel(
     return output, gate_out
 
 
-@torch.compiler.disable
 def fuse_residual_layernorm_scale_shift_gate_select01_kernel(
     x: torch.Tensor,
     residual: torch.Tensor,
